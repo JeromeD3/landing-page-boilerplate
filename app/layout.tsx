@@ -12,6 +12,7 @@ import "@/styles/loading.css";
 import { Analytics } from "@vercel/analytics/react";
 import { Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
+import Script from "next/script";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
