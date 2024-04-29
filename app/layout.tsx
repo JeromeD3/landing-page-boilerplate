@@ -57,6 +57,11 @@ export default async function RootLayout({
           <Header />
           <main className="flex flex-col items-center py-6">{children}</main>
           <Footer />
+          <Script
+            defer
+            data-website-id="5a004bb3-5d3f-4901-84ed-c10a57d782d5"
+            src="http://localhost:3000/script.js"
+          ></Script>
           <Analytics />
           <TailwindIndicator />
         </ThemeProvider>
