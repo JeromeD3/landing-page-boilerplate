@@ -12,7 +12,6 @@ import "@/styles/loading.css";
 import { Analytics } from "@vercel/analytics/react";
 import { Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
-import Script from "next/script";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -43,6 +42,8 @@ export default async function RootLayout({
 }) {
   return (
     <html lang={(lang && lang[0]) || defaultLocale} suppressHydrationWarning>
+      <BaiDuAnalytics />
+
       <head />
       <body
         className={cn(
@@ -58,11 +59,6 @@ export default async function RootLayout({
           <Header />
           <main className="flex flex-col items-center py-6">{children}</main>
           <Footer />
-          <Script
-            defer
-            data-website-id="5a004bb3-5d3f-4901-84ed-c10a57d782d5"
-            src="http://localhost:3000/script.js"
-          ></Script>
           <Analytics />
           <TailwindIndicator />
         </ThemeProvider>
@@ -71,7 +67,6 @@ export default async function RootLayout({
         ) : (
           <>
             <GoogleAnalytics />
-            <BaiDuAnalytics />
           </>
         )}
       </body>
